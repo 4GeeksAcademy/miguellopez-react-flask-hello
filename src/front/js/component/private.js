@@ -1,16 +1,26 @@
-import React, { useContext } from 'react';
-import { Redirect } from 'react-router-dom';
-import Private from '../component/private';
-import { Context } from "../store/appContext";
+// import { useHistory } from 'react-router-dom';
 
-const PrivateView = () => {
-    const { actions } = useContext(Context);
+import React, { useContext } from 'react';
+import { Context } from '../store/appContext';
+
+const Private = () => {
+    const { actions, store } = useContext(Context); 
+    
+    const handleLogout = () => {
+        actions.LogOut(); // Llama a la función LogOut del flux.js para cerrar sesión
+    };
 
     return (
-        <div>
-            <Private />
+        <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '20px' }}>
+            <h1 style={{ marginBottom: '50px' }}>Bienvenido, este es tu espacio privado</h1>            
+            <button 
+                type="button" 
+                class="btn btn-outline-danger"
+                onClick={handleLogout}>
+                    Cerrar sesión
+            </button>
         </div>
     );
 };
 
-export default PrivateView;
+export default Private;
