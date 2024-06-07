@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			SignUp: (email, password) => {
-				fetch('https://sturdy-space-barnacle-7vv77gvq456ghxjwv-3001.app.github.dev/api/crear_usuario', {
+				fetch('https://crispy-journey-x55qrqj5xqjjf96j6-3001.app.github.dev/api/crear_usuario', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify({ email: email, password: password }),
@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 			LogIn: (email, password) => {
-				fetch('https://sturdy-space-barnacle-7vv77gvq456ghxjwv-3001.app.github.dev/api/iniciar_sesion', {
+				fetch('https://crispy-journey-x55qrqj5xqjjf96j6-3001.app.github.dev/api/iniciar_sesion', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify({ email: email, password: password }),
@@ -89,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			ValidateToken: () => {
 				const token = sessionStorage.getItem("token")
 
-				fetch('https://sturdy-space-barnacle-7vv77gvq456ghxjwv-3001.app.github.dev/api/protected', {
+				fetch('https://crispy-journey-x55qrqj5xqjjf96j6-3001.app.github.dev/api/protected', {
 					method: 'GET',
 					headers: { 'Autorization': 'Bearer' + token }
 				})
